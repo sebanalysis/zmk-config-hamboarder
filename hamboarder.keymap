@@ -1,0 +1,36 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// mouse 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
+
+#define DEFAULT 0
+#define ONE 1
+#define TWO 2
+#define THREE 3
+#define FOUR 4
+#define FIVE 5
+#define SIX 6
+
+
+/ {
+
+keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+ bindings = < 
+ &kp 0 &kp 1 &kp 2 &kp 3 &kp 4 &kp 5                         &kp 6 &kp 7 &kp 8 &kp 9 &kp A &kp B
+ &kp C &kp D &kp E &kp F &kp G &kp H                         &kp I &kp J &kp K &kp L &kp M &kp N
+ &kp O &kp P &kp Q &kp R &kp S &kp T &kp a &kp b &kp c &kp d &kp e &kp f &kp g &kp h &kp i &kp j
+                   &kp k &kp l &kp m &kp n &kp o &kp p &kp q &kp r &kp s &kp t
+            >;                  
+        };          
+    };
+}
+
+
