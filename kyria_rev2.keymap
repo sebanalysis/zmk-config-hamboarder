@@ -1,0 +1,169 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+// https://zmk.dev/docs/codes/keyboard-keypad
+// https://zmk.dev/docs/behaviors/mod-morph
+// https://github.com/sebanalysis/zmk-config/actions
+// https://zmk.dev/docs/behaviors/tap-dance
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// mouse 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // default: 10
+#include <dt-bindings/zmk/pointing.h>
+
+
+#define DEFAULT 0
+#define SYM 1
+#define NUMB 2
+#define FUNC 3
+#define ARROW 4
+#define DUMMY 5
+#define MAUS 6
+
+
+	
+
+
+/ {
+	
+	conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <4 2>;
+            then-layer = <5>;
+		};
+	};
+
+    macros {
+		zoom_out: zoom_out {
+			label = "macro_zoom_out";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+				= <&macro_press &kp LCTRL>
+				, <&macro_tap &kp KP_MINUS>
+				, <&macro_release &kp LCTRL>
+				;
+		};
+
+		zoom_in: zoom_in {
+			label = "macro_zoom_in";
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+				= <&macro_press &kp LCTRL>
+				, <&macro_tap &kp KP_PLUS>
+				, <&macro_release &kp LCTRL>
+				;
+		};
+	};
+
+
+	behaviors {
+	
+	  /* Tap-dance: tap = Shift, double-tap = Caps Lock */
+	  shift2: shift2 {
+	    compatible = "zmk,behavior-tap-dance";
+	    label = "SHIFT2";
+	    #binding-cells = <0>;
+	    tapping-term-ms = <200>;
+	    bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
+	  };
+	
+	};
+
+
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <    
+                &kp ESC             &kp Q           &kp W           &kp F      &kp P       &kp B                                                                       &kp J           &kp L          &kp U          &kp Y          &kp SEMI       &kp DEL
+                &kp TAB             &kp A           &kp R           &kp S      &kp T       &kp G                                                                       &kp M           &kp N          &kp E          &kp I          &kp O          &kp SQT
+                &mo ARROW           &kp Z           &kp X           &kp C      &kp D       &kp V   &kp LGUI        &kp LSHIFT              &mo ARROW        &kp RET    &kp K           &kp H          &kp COMMA      &kp DOT        &kp SLASH      &mo FUNC
+                                                                    &mo SYM    &mo NUMB    &shift2 &kp LCTRL       &kp LALT                &mo NUMB         &kp BSPC   &kp SPACE       &mo SYM        &mo MAUS
+            >;            
+            sensor-bindings = <&inc_dec_kp UP DOWN>;            
+        };          
+
+        sym {          
+            bindings = <            
+                &kp GRAVE       &none           &kp LBRC        &kp RBRC    &none       &none                                                                     &none          &none               &kp PSCRN       &kp UNDER       &kp KP_MINUS    &trans
+                &none           &kp LBKT        &kp RBKT        &kp LPAR    &kp RPAR    &none                                                                     &none          &kp EXCL            &kp PIPE        &kp TILDE       &kp EQUAL       &none
+                &trans          &none           &none           &none       &none       &none    &trans       &trans                    &trans      &trans        &none          &kp HASH            &none           &none           &kp BSLH        &trans
+                                                                &trans      &trans      &trans   &trans       &trans                    &trans      &trans        &trans         &trans              &trans                                           
+            >;              
+            sensor-bindings = <&inc_dec_kp A B>;                
+        };                  
+
+        num {               
+            bindings = <            
+                &kp GRAVE         &kp LBKT        &kp RBKT        &kp LPAR    &kp RPAR    &none                                                                      &kp CARET        &kp N7             &kp N8          &kp N9          &kp KP_MINUS    &trans
+                &none             &kp AT          &kp PRCNT       &kp AMPS    &kp DLLR    &none                                                                      &kp KP_PLUS      &kp N4             &kp N5          &kp N6          &kp DOT         &kp N0
+                &trans            &none           &none           &kp LBRC    &kp RBRC    &none   &trans       &trans                     &trans      &trans         &kp KP_ASTERISK  &kp N1             &kp N2          &kp N3          &kp KP_SLASH    &trans  
+                                                                  &trans      &trans      &trans  &trans       &trans                     &trans      &trans         &trans           &kp N0             &trans                                               
+            
+            >;              
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;              
+        };              
+
+        func {             
+            bindings = <                
+                &kp F1          &kp F2          &kp F3          &kp F4      &kp F5      &kp F6                                                                     &kp F7          &kp F8              &kp F9          &kp F10         &kp F11         &kp F12
+                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none       &none       &none                                                                      &none           &none               &none           &none           &none           &none
+                &out OUT_BLE    &bt BT_CLR_ALL  &out OUT_USB    &none       &none       &none   &trans       &trans                     &trans      &trans         &none           &none               &none           &none           &none           &trans
+                                                                &trans      &trans      &trans  &trans       &trans                     &trans      &trans         &trans          &trans              &trans                                              
+            >;          
+        };    
+
+        
+        arr {          
+            bindings = <            
+                &kp C_VOL_UP   &kp C_BRI_UP     &zoom_in        &none       &none          &none                                                                      &kp INSERT      &zoom_in               &kp PG_UP       &kp PG_DN       &zoom_out             &kp PSCRN                      
+                &kp C_VOL_DN   &kp C_BRI_DN     &zoom_out       &none       &none          &none                                                                      &kp HOME        &kp LEFT               &kp UP          &kp DOWN        &kp RIGHT             &kp END    
+                &trans         &kp C_MUTE       &none           &none       &none          &none    &trans      &trans                     &trans      &trans         &none           &none           		 &none        	 &none      	 &none	   			   &trans           
+                                                                &trans      &trans         &trans   &trans      &trans                     &trans      &trans         &trans          &trans                 &trans    
+            >;      
+        };  
+
+//  cannot access this "dummy_layer" probably because it is the conditional combined layer of 2 and 4 specified earlier
+
+        dummy_layer {
+              bindings = <
+              &none          &none            &none       &none       &none       &none                                                                  &none          &none           &none       &none       &none       &none    
+              &none          &none            &none       &none       &none       &none                                                                  &none          &none           &none       &none       &none       &none    
+              &none          &none            &none       &none       &none       &none       &trans       &trans                     &trans   &trans    &none          &none           &none       &none       &none       &none    
+                                                          &trans      &trans      &trans      &trans       &trans                     &trans   &trans    &trans         &trans          &trans    
+         >;
+        };
+
+
+        mouse {      
+            bindings = <
+                &none          &none            &none           &none           &none           &none                                                                       &none	       &none                &kp PG_UP       &kp PG_DN       &none       	&none    
+                &none          &none            &none           &mkp LCLK       &mkp RCLK  		&none                                                                       &mkp LCLK      &mmv MOVE_LEFT       &mmv MOVE_UP    &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp RCLK 
+                &trans         &none            &none           &none           &none           &none    &trans       &trans                    &trans     &trans           &none          &msc SCRL_LEFT		&msc SCRL_UP	&msc SCRL_DOWN	&msc SCRL_RIGHT &trans   
+                                                                &trans          &trans          &trans   &trans       &trans                    &trans     &trans           &trans         &trans               &trans
+            
+                >;
+        }; 
+
+    };
+};
+
+/* Mouse scroll: remove ramp-up delay (instant scroll) */
+&msc {
+	time-to-max-speed-ms = <0>;
+	acceleration-exponent = <1>;
+};
+
+
+
