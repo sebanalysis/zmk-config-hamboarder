@@ -24,10 +24,10 @@ keymap {
         compatible = "zmk,keymap";
         default_layer {
  bindings = < 
- &out OUT_USB &bt BT_CLR_ALL &bt BT_SEL 0 &out OUT_BT &kp 4 &kp 5                         &kp 6 &kp 7 &kp 8 &kp 9 &kp A &kp B
+ &kp N0       &kp N1         &kp N2       &kp N3      &kp N4 &kp N5                         &kp N6 &kp N7 &kp N8 &kp N9 &kp A &kp B
  &kp C        &kp D          &kp E        &kp F       &kp G &kp H                         &kp I &kp J &kp K &kp L &kp M &kp N
- &kp O        &kp P          &kp Q        &kp R       &kp S &kp T &kp a &kp b &kp c &kp d &kp e &kp f &kp g &kp h &kp i &kp j
-                             &kp k        &kp l       &kp m &kp n &kp o &kp p &kp q &kp r &kp s &kp t
+ &kp O        &kp P          &kp Q        &kp R       &kp S &kp T &kp U &kp V &kp W &kp X &kp Y &kp Z &kp MINUS &kp EQUAL &kp LBKT &kp RBKT
+                             &kp BSLH     &kp SEMI    &kp SQT &kp COMMA &kp DOT &kp SLASH &kp GRAVE &kp EXCL &kp AT &kp HASH
             >;                  
         };          
     };
