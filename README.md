@@ -16,7 +16,12 @@ rename the files to hamboarder
 
 ## todo
 
-build 5x12 firmare on actions.
-add a 6th row in the shield
+convert ergogen to default pinout
+move diodes between switches
+add hotswap connections
+route traces
+
+~~build 5x12 firmare on actions.
+~~add a 6th row in the shield
 ~~convert the 5x12 template to my name format and try to run
 
