@@ -6,12 +6,13 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include "layout_all1u.dtsi"
+// dont care about physical layout
+// #include "layout_all1u.dtsi"
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &layout_ortho_5x12_all1u;
+//        zmk,physical-layout = &layout_ortho_5x12_all1u;
     };
 
     matrix_transform_50_all1u: keymap_transform_0 {
@@ -58,6 +59,6 @@
     };
 };
 
-&layout_ortho_5x12_all1u {
-    transform = <&matrix_transform_50_all1u>;
-};
+//&layout_ortho_5x12_all1u {
+//    transform = <&matrix_transform_50_all1u>;
+//};
