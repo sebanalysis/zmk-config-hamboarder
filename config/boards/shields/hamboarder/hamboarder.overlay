@@ -59,6 +59,6 @@
     };
 };
 
-//&layout_ortho_5x12_all1u {
-//    transform = <&matrix_transform_50_all1u>;
-//};
+&layout_ortho_5x12_all1u {
+   transform = <&matrix_transform_50_all1u>;
+};
