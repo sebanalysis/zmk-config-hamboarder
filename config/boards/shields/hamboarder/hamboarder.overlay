@@ -6,7 +6,7 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include <layouts/common/ortho_5x12/all1u.dtsi>
+#include "layout_all1u.dtsi"
 
 / {
     chosen {
