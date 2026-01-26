@@ -1,4 +1,4 @@
-#include <layouts/common/ortho_5x12/position_map.dtsi>
+#include "layout_position_map.dtsi"
 #include <physical_layouts.dtsi>
 
 / {
