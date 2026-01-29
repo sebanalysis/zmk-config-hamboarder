@@ -63,8 +63,8 @@ points:
               {
                 column_net: COL1,
                 mirror.column_net: COL10,
-                row_net: row4,
-                mirror.row_net: row4,
+                row_net: ROW4,
+                mirror.row_net: ROW4,
               }
         col2:
           key: { spread: U }
@@ -279,8 +279,8 @@ pcbs:
         what: diode
         where: true
         adjust:
-          rotate: 180
-          shift: [0, +0.5U]
+          rotate: 0
+          shift: [0, +0.5U] # putting between the keys
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
@@ -297,8 +297,8 @@ pcbs:
           VCC: VCC
           RST: RST
 
-          P0: ROW0
-          P1: ROW1
+          P0: ROW1
+          P1: ROW0
           P2: ROW2
           P3: ROW3
           P4: ROW4
