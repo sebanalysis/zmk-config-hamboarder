@@ -1,260 +1,187 @@
 units:
-  pcb_height: 165
-  pcb_width: 340
-  shift_align: 6 # not sure why it doesn't align without this
-  cover_height: 200
+  rotation: -17.5
+  pcb_y: 165
+  pcb_x: 310
+  touchpad_x: 110
+  touchpad_y: 40
+  separation_x: 144
+  offset_y: -5
+
+
 
 points:
+  # defines the spacing of the keys
   key:
     padding: U # cy
+
   zones:
-    matrix:
-      rotate: -15
-      mirror:
-        &mirror { ref: matrix_inner_bottom, shift: [10, 100], distance: 40 }
-
+    grid:
+      # grid_1_1 should serve as the origin point of the whole keyboard
       columns:
-        outer: { key: { column_net: COL0, mirror.column_net: COL11 } }
-        pinky:
-          { key: { stagger: 0U, column_net: COL1, mirror.column_net: COL10 } }
-        ring:
-          {
-            key: { stagger: 0.61U, column_net: COL2, mirror.column_net: COL9 },
-          }
-        middle:
-          {
-            key: { stagger: 0.33U, column_net: COL3, mirror.column_net: COL8 },
-          }
-        index:
-          {
-            key:
-              { stagger: -0.33U, column_net: COL4, mirror.column_net: COL7 },
-          }
-        inner:
-          {
-            key:
-              { stagger: -0.14U, column_net: COL5, mirror.column_net: COL6 },
-          }
-
+        0: {}
+        1: {}
       rows:
-        bottom: { row_net: ROW3, mirror.row_net: ROW3 }
-        home: { row_net: ROW2, mirror.row_net: ROW2 }
-        top: { row_net: ROW1, mirror.row_net: ROW1 }
-        upper: { row_net: ROW0, mirror.row_net: ROW0 }
-    row4:
-      mirror: *mirror
-      anchor: { ref: matrix_outer_bottom, shift: [0.26U, -1.4U], rotate: 15 }
+        0: {}
+        1: {}
 
+    matrix:
+      anchor:
+        ref: grid_1_1
+        shift: [-separation_x, 3]
+        rotate: rotation
+      mirror: &mirror
+        ref: grid_1_1
+        shift: [-0.5U, 0] # necessary when only 2 columns in grid
       columns:
-        col0:
-          rows:
-            bottom:
-              {
-                column_net: COL0,
-                mirror.column_net: COL11,
-                row_net: ROW4,
-                mirror.row_net: ROW4,
-              }
-
-        col1:
-          key: { spread: U }
-          rows:
-            top:
-              {
-                column_net: COL1,
-                mirror.column_net: COL10,
-                row_net: ROW4,
-                mirror.row_net: ROW4,
-              }
-        col2:
-          key: { spread: U }
-          rows:
-            top:
-              {
-                column_net: COL2,
-                mirror.column_net: COL9,
-                row_net: ROW4,
-                mirror.row_net: ROW4,
-              }
-        col3:
-          key: { spread: U }
-          rows:
-            top:
-              {
-                column_net: COL3,
-                mirror.column_net: COL8,
-                row_net: ROW4,
-                mirror.row_net: ROW4,
-              }
-
-    thumb_cluster:
+        0: { key: { stagger: 0U, column_net: COL0, mirror.column_net: COL11 } }
+        1: { key: { stagger: 0U, column_net: COL1, mirror.column_net: COL10 } }
+        2: { key: { stagger: 0.61U, column_net: COL2, mirror.column_net: COL9 } }
+        3: { key: { stagger: 0.33U, column_net: COL3, mirror.column_net: COL8 } }
+        4: { key: { stagger: -0.33U, column_net: COL4, mirror.column_net: COL7 }}
+        5: { key: { stagger: -0.14U, column_net: COL5, mirror.column_net: COL6 }}
+      rows:
+        0: { row_net: ROW3, mirror.row_net: ROW3 }
+        1: { row_net: ROW2, mirror.row_net: ROW2 }
+        2: { row_net: ROW1, mirror.row_net: ROW1 }
+        3: { row_net: ROW0, mirror.row_net: ROW0 }
+    line:
       mirror: *mirror
-      anchor: { ref: matrix_inner_bottom, shift: [-2, -21], rotate: -10 }
-
+      anchor: 
+        ref: matrix_0_0
+        shift: [0.3U, -1.4U]
+        rotate: -rotation
       columns:
-        col3:
+        0: { key: { column_net: COL0, mirror.column_net: COL11 } }
+        1: { key: { column_net: COL1, mirror.column_net: COL10 } }
+        2: { key: { column_net: COL2, mirror.column_net: COL9 } }
+        3: { key: { column_net: COL3, mirror.column_net: COL8 } }
+      rows:
+        0: { row_net: ROW4, mirror.row_net: ROW4 }
+    cluster:
+      mirror: *mirror
+      anchor:
+        ref: line_3_0
+        shift: [32, -13]
+        rotate: rotation - 10
+      columns:
+        0:
+          key: { stagger: 0 }
           rows:
-            bottom:
-              {
-                column_net: COL0,
-                mirror.column_net: COL11,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-
-        col4col5:
+            0: { column_net: COL0, mirror.column_net: COL11, row_net: ROW5, mirror.row_net: ROW5 }
+        1:
           key: { stagger: -0.5U }
           rows:
-            bottom:
-              {
-                column_net: COL1,
-                mirror.column_net: COL10,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-            top:
-              {
-                column_net: COL2,
-                mirror.column_net: COL9,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-
-        col5:
+            0: { column_net: COL1, mirror.column_net: COL10, row_net: ROW5, mirror.row_net: ROW5 }
+            1: { column_net: COL2, mirror.column_net: COL9, row_net: ROW5, mirror.row_net: ROW5 }
+        2:
           key: { stagger: -0.5U }
           rows:
-            bottom:
-              {
-                column_net: COL3,
-                mirror.column_net: COL8,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-            top:
-              {
-                column_net: COL4,
-                mirror.column_net: COL7,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-
-
-    central:
-      mirror: *mirror
-      anchor: { ref: thumb_cluster_col5_bottom, shift: [1.35U, 0.4U], rotate: 25 }
-      columns:
-        col5row5:
-          rows:
-            bottom:
-              {
-                column_net: COL5,
-                mirror.column_net: COL6,
-                row_net: ROW5,
-                mirror.row_net: ROW5,
-              }
-
+            0: { column_net: COL3, mirror.column_net: COL8, row_net: ROW5, mirror.row_net: ROW5 }
+            1: { column_net: COL4, mirror.column_net: COL7, row_net: ROW5, mirror.row_net: ROW5 }
+              
 
 outlines:
+  pcb:
+    - what: rectangle
+      size: [pcb_x, pcb_y]
+      where:
+        - ref: grid_1_1
+          shift: [-0.5U, offset_y]
+  rest: 
+    - what: rectangle
+      size: [pcb_x, touchpad_y]
+      where:
+        - ref: grid_1_1
+          shift: [-0.5U, offset_y -pcb_y/2 - touchpad_y/2]
+  touchpad:
+    - what: rectangle
+      size: [touchpad_x, touchpad_y]
+      where:
+        - ref: grid_1_1
+          shift: [-0.5U, offset_y -pcb_y/2 - touchpad_y/2]
+
+  base:
+    - "+pcb"
+    - what: rectangle
+      size: [pcb_x, touchpad_y]
+      where:
+        - ref: grid_1_1
+          shift: [-0.5U, offset_y -pcb_y/2 - touchpad_y/2]
+    - what: rectangle
+      size: [touchpad_x, touchpad_y]
+      where:
+        - ref: grid_1_1
+          # have to shift down by 0.01 microns to cut off the border
+          shift: [-0.5U, offset_y -pcb_y/2 - touchpad_y/2- 1e-5]
+      operation: subtract
+  flanges: 
+    - what: rectangle
+      where: true
+      size: [15, 15]
+      bevel: 0
+  nicenano:
+    - what: rectangle
+      size: [19,32]
+      where:
+        - ref: grid_1_1
+          shift: [ -0.5U, 57]
+  battery:
+    - what: rectangle
+      size: [50, 50]
+      asym: both
+      where:
+        - ref: line_0_0
+          shift: [30, -50]
+  thickplate:
+    - "+base"
+    - "-battery"
+    - "-flanges"
+    - "-nicenano"
+  switches:
+    - what: rectangle
+      where: true
+      size: [13.9, 13.9]
+      bevel: 0
+  thinplate:
+    - "+base"
+    - "-battery"
+    - "-switches"
+    - "-nicenano"
   keys:
     - what: rectangle
       where: true
-      size: [1cx, 1cy]
+      size: [1cx, 1cy] # choc keycaps
+      # size: [U-1, U-1] # mx keycaps
       bevel: 0.5
-  pcb_outline:
-    - what: rectangle
-      size: [pcb_width, pcb_height] 
-      where:
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_outer_bottom
-              - ref: mirror_matrix_outer_bottom
-          affect: [x]
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_middle_upper
-              - ref: central_col5row5_bottom
-          affect: [y]
-          # + shift_align is to match the bottom of the switches
-          shift: [0,shift_align]
   cover:
-    - what: rectangle
-      size: [pcb_width, cover_height]
-      where:
-        # annoyingly, you can't align to the top edge of another outline
-        # have to use the same alignment as the pcb and shift up by the difference
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_outer_bottom
-              - ref: mirror_matrix_outer_bottom
-          affect: [x]
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_middle_upper
-              - ref: central_col5row5_bottom
-          affect: [y]
-          shift: [0, -(cover_height-pcb_height)/2 + shift_align]
-
-      # touchpad notch cut out of that strip
-    - what: rectangle
-      size: [120, cover_height-pcb_height]
-      operation: subtract
-      where:
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_outer_bottom
-              - ref: mirror_matrix_outer_bottom
-          affect: [x]
-        - aggregate:
-            method: average
-            parts:
-              - ref: matrix_middle_upper
-              - ref: central_col5row5_bottom
-          affect: [y]
-          # not sure why it need the -1 to align
-          # + 3 is to match the bottom of the switches
-          shift: [0, -cover_height/2-1 + shift_align]
-    
-    # keycap outlines + clearance  
+    - "+base"
+    # subtract keycap outlines + clearance
     - what: rectangle
       operation: subtract
       where: true
       size: U+3 # from centre of key, used for both width/height
       bevel: 2
-
-  switch_base:
-    - what: rectangle
-      where: true
-      size: [13.9, 13.9]
-      bevel: 0
-  plate:
-    - what: outline
-      name: pcb_outline
-    - what: outline
-      name: switch_base
-      operation: subtract
-
-
-
-
-
   combined:
-    #- "^pcb_outline"
+  #   - "^pcb"
     - "^keys"
-    #- "^switch_base"
+    #- "^switches"
     #- "^plate"
-    - "^cover"
+    # - "^cover"
+    - "^nicenano"
+    # - "^battery"
+    - "^base"
+  pcb_large: 
+  - "+base"
+  - "-battery"
+
+
 
 pcbs:
-  main:
+  0: # just a handle,
     template: kicad8
     outlines:
       edge:
-        outline: pcb_outline
+        outline: pcb_large
         layer: Edge.Cuts
     footprints:
       # I am using choc v1
@@ -288,8 +215,10 @@ pcbs:
       mcu:
         what: promicro
         asym: source
-        where: { ref: matrix_inner_upper, shift: [20, 20], affect: [x, y] }
-        adjust: { rotate: 270 }
+        where:
+          - ref: grid_1_1
+            shift: [ -0.5U, 57]
+            rotate: 270
         params:
           orientation: down
           GND: GND
@@ -319,12 +248,17 @@ pcbs:
       reset:
         what: button
         asym: source
-        where: { ref: matrix_inner_upper, shift: [40, 30], rotate: 180 } #, affect: [x, y]}
+        where: 
+          - ref: grid_1_1
+            shift: [ -0.75U, 45]
+            rotate: 180
         params: { from: RST, to: GND }
       batt_jst:
         what: jstph
         asym: source
-        where: { ref: matrix_inner_upper, shift: [50, 30], affect: [x, y] }
+        where: 
+          - ref: line_0_0
+            shift: [30, -50]
         params: { side: B, pos: BAT+, neg: GND }
       # power:
       #   what: slider
@@ -334,7 +268,9 @@ pcbs:
       pwr_in:
         what: pad
         asym: source
-        where: { ref: matrix_inner_upper, shift: [60, 30], affect: [x, y] }
+        where: 
+          - ref: line_0_0
+            shift: [30, -40]
         params:
           {
             width: 7,
@@ -347,7 +283,9 @@ pcbs:
       pwr_out:
         what: pad
         asym: source
-        where: { ref: matrix_inner_upper, shift: [65, 30], affect: [x, y] }
+        where: 
+          - ref: line_0_0
+            shift: [30, -50]
         params:
           {
             width: 7,
@@ -355,11 +293,12 @@ pcbs:
             front: true,
             back: false,
             net: RAW,
-            text: "RAW",
           }
 
       pwr_out_via:
         what: via
         asym: source
-        where: { ref: matrix_inner_upper, shift: [65, 31.5], affect: [x, y] } # place near the pad
+        where: 
+          - ref: line_0_0
+            shift: [30, -55]
         params: { net: RAW }
