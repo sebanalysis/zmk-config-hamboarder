@@ -14,16 +14,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Default Layer";
-            // ------------------------------------------------------------------------------------------
-            // |  ESC  |  1   |  2   |  3   |  4   |  5   |   6   |  7    |  8   |  9   |   0   | BSPC  |
-            // |  TAB  |  Q   |  W   |  E   |  R   |  T   |   Y   |  U    |  I   |  O   |   P   |  \    |
-            // | SHIFT |  A   |  S   |  D   |  F   |  G   |   H   |  J    |  K   |  L   |   ;   |  '    |
-            // | CTRL  |  Z   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |   /   | ENTER |
-            // |ADJUST | LCTL | LALT | LGUI | LOWR | SPACE| SPACE |  RAIS | LEFT | DOWN | UARW  | RARW  |
-
-
+        0 {
             bindings = <
 // column       0             1            2           3        4          5           6           7         8           9           10          11
                 &bt BT_SEL 0  &bt BT_CLR   &kp N2      &kp N3   &kp LEFT   &kp LEFT    &kp LEFT    &kp LEFT  &kp LEFT    &kp LEFT    &kp LEFT    &kp LEFT
@@ -35,14 +26,8 @@
             >;
         };
 
-        lower_layer {
-            display-name = "Lower Layer";
-            // -------------------------------------------------------------------------------------------
-            // |  ESC  |  F2  |  F3  |  F4  |  F5  |  F6  |   F7  |  F8   |  F9  | F10  |  F11  |  F12  |
-            // |   ~   |  !   |  @   |  #   |  $   |  %   |   ^   |   &   |  *   |  (   |   )   |  DEL  |
-            // |       |  F1  |  F2  |  F3  |  F4  |  F5  |   F6  |   _   |  +   |  {   |   }   |   |   |
-            // |       |  F7  |  F8  |  F9  |  F10 |  F11 |   F12 | LS(#) |LS(|) |      |       |       |
-            // |       |      |      |      |      |      |       |       | NEXT | Vol- | Vol+ | PLAY   |
+
+        1 {
             bindings = <
                 &kp ESC   &kp F2   &kp F3   &kp F4   &kp F5    &kp F6       &kp F7          &kp F8              &kp F9              &kp F10      &kp F11          &kp F12
                 &kp TILDE &kp EXCL &kp AT   &kp HASH &kp DLLR  &kp PRCNT    &kp CARET       &kp AMPS            &kp ASTRK           &kp LPAR     &kp RPAR         &kp DEL
@@ -53,14 +38,8 @@
             >;
         };
 
-        raise_layer {
-            display-name = "Raise Layer";
-            // ------------------------------------------------------------------------------------------
-            // |  ESC  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7   |  F8   |  F9  | F10  |  F11  |  F12  |
-            // |   ~   |  1   |  2   |  3   |  4   |  5   |  6    |   7   |  8   |  9   |   0   |  DEL  |
-            // |  DEL  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6   |   -   |  =   |  [   |   ]   |   \   |
-            // |       |  F7  |  F8  |  F9  |  F10 |  F11 |  F12  |   #   |  |   |      |       |       |
-            // |       |      |      |      |      |      |       |       |       |      |      |       |
+
+        2 {
             bindings = <
                 &kp ESC   &kp F2   &kp F3   &kp F4   &kp F5    &kp F6  &kp F7    &kp F8          &kp F9          &kp F10      &kp F11          &kp F12
                 &kp TILDE &kp N1   &kp N2   &kp N3   &kp N4    &kp N5  &kp N6    &kp N7          &kp N8          &kp N9       &kp N0           &kp DEL
@@ -71,14 +50,8 @@
             >;
         };
 
-        adjust_layer {
-            display-name = "Adjust Layer";
-            // ------------------------------------------------------------------------------------------
-            // |tog(4)|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |    F12    |
-            // |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |LALT(PRTSN)|
-            // |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |   PRTSN   |
-            // |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |LCTRL(DEL) |
-            // |      |      |      |      |      |BOOTLD|BOOTLD|      |      |      |      |           |
+
+        3 {
             bindings = <
                 &tog 4 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
                 &trans &none  &none  &none  &none  &none  &none  &none  &none  &none   &none   &kp LA(PSCRN)
@@ -89,14 +62,8 @@
             >;
         };
 
-        flock_layer {
-            display-name = "Flock Layer";
-            // ----------------------------------------------------------------------------------------------
-            // |tog(4) |  F2    |   F3   |   F4   |   F5   |   F6   |  F7  |  F8  |  F9  | F10 | F11 |      |
-            // |out tog|BT_SEL 0|BT_SEL 1|BT_SEL 2|BT_SEL 3|BT_SEL 4|BT_PRV|BT_NXT|BT_CLR|     |     |      |
-            // |       |        |        |        |        |        |      |      |      |     |     |      |
-            // |       |        |        |        |        |        |      |      |      |     |     |      |
-            // |       |        |        |        |        |        |      |      |      |     |     |      |
+
+        4 {
             bindings = <
                 &tog 4       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6       &kp F7     &kp F8     &kp F9     &kp F10 &kp F11 &trans
                 &out OUT_TOG &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_PRV &bt BT_NXT &bt BT_CLR &trans  &trans  &trans
