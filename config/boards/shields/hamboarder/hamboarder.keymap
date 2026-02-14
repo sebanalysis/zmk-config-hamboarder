@@ -23,7 +23,7 @@
                         &kp GRAVE        &kp Q            &kp W            &kp F            &kp P            &kp B            &kp J            &kp L            &kp U            &kp Y            &kp SEMI         &kp MINUS
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SQT
                         &mo 4            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &mo 3
-                        &kp LEFT         &kp SPACE        &kp RIGHT        &mo 2            &kp LSHFT        &none            &none            &kp SPACE        &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT 
+                        &kp LEFT         &kp SPACE        &kp RIGHT        &mo 2            &kp LSHFT        &none            &none            &kp SPACE        &mo 1            &kp UP           &kp DOWN         &kp RIGHT 
                         &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &bt BT_SEL 3     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_CLR_ALL   &kp RET          &kp BSPC         &mo 5            &mo 1    >; };
         // symbols
         1 {bindings = < &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans 
