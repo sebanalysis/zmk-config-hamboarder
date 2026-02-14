@@ -14,7 +14,7 @@
 	acceleration-exponent = <1>;
 };
 
-/ {y
+/ {
     keymap {
         compatible = "zmk,keymap";
 
