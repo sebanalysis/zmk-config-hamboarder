@@ -24,7 +24,7 @@
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SQT
                         &mo 4            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
                         &kp LEFT         &kp SPACE        &kp RIGHT        &mo 2            &kp LSHFT        &none            &none            &kp SPACE        &mo 1            &kp UP           &kp DOWN         &kp RIGHT 
-                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp LKBT         &kp RBKT         &bt PLUS         &kp RET          &kp BSPC         &mo 4            &kp RALT    >; };
+                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp LBKT         &kp RBKT         &kp PLUS         &kp RET          &kp BSPC         &mo 4            &kp RALT    >; };
         // symbols
         1 {bindings = < &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans 
                         &trans           &trans           &kp LBRC         &kp RBRC         &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans
@@ -33,7 +33,7 @@
                         &trans           &trans           &trans           &trans           &trans           &none            &none            &trans           &trans           &trans           &trans           &trans
                         &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans >; };
         // numpad
-        2 {bindings = < &trans           &trans           &trans           &trans           &trans           &trans           &kp CARET        &kp AMPERSAND    &kp ASTERIX      &kp LBRC         &kp RBRC         &trans
+        2 {bindings = < &trans           &trans           &trans           &trans           &trans           &trans           &kp CARET        &kp AMPERSAND    &kp STAR         &kp LBRC         &kp RBRC         &trans
                         &trans           &trans           &trans           &trans           &trans           &trans           &trans           &kp N7           &kp N8           &kp N9           &trans           &trans
                         &trans           &trans           &trans           &trans           &trans           &trans           &kp KP_PLUS      &kp N4           &kp N5           &kp N6           &trans           &trans
                         &trans           &trans           &trans           &trans           &trans           &trans           &trans           &kp N1           &kp N2           &kp N3           &trans           &trans 
