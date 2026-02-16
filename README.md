@@ -18,6 +18,13 @@ send to NICENANO with cp as the file manager doesn't work sometimes.
 cp hamboarder-nice_nano@2.0.0-zmk.uf2 /run/media/$USER/NICENANO
 ```
 
+
+remove paired bluetooth cache on pc 
+
+```
+sudo rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/C0:6F:8C:27:7D:4F; sudo bash -c 'rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/cache/*'; sudo systemctl restart bluetooth
+```
+
 ## ergogen notes
 ## dxf to step
 
