@@ -22,9 +22,9 @@
         0 {bindings = < &kp ESC          &kp N1           &kp N2           &kp N3           &kp N4           &kp N5           &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &kp DEL      
                         &kp GRAVE        &kp Q            &kp W            &kp F            &kp P            &kp B            &kp J            &kp L            &kp U            &kp Y            &kp SEMI         &kp MINUS
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SQT
-                        &mo 4            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
+                        &mo 3            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
                         &kp LEFT         &kp SPACE        &kp RIGHT        &mo 2            &kp LSHFT        &none            &none            &kp SPACE        &mo 1            &kp UP           &kp DOWN         &kp RIGHT 
-                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp LBKT         &kp RBKT         &kp PLUS         &kp RET          &kp BSPC         &mo 4            &kp RALT    >; };
+                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp LBKT         &kp RBKT         &kp PLUS         &kp RET          &kp BSPC         &mo 3            &kp RALT    >; };
         // symbols
         1 {bindings = < &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans 
                         &trans           &trans           &kp LBRC         &kp RBRC         &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans
@@ -46,6 +46,6 @@
                         &kp C_VOL_DN     &kp C_BRI_DN     &trans           &mkp LCLK        &mkp RCLK        &trans           &kp HOME         &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT        &kp END
                         &trans           &kp C_MUTE       &trans           &trans           &trans           &trans           &trans           &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &trans
                         &trans           &trans           &trans           &trans           &trans           &none            &none            &trans           &trans           &trans           &trans           &trans
-                        &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_CLR       &trans           &trans           &trans           &trans >; };
+                        &trans           &trans           &trans           &trans           &out OUT_USB     &out OUT_BLE     &bt BT_CLR       &trans       &trans           &trans           &trans           &trans >; };
     };
 };
