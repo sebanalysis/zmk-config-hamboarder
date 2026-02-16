@@ -22,7 +22,7 @@
                         &kp GRAVE        &kp Q            &kp W            &kp F            &kp P            &kp B            &kp J            &kp L            &kp U            &kp Y            &kp SEMI         &kp MINUS
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SQT
                         &mo 2            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
-                        &bt BT_SEL       &bt BT_SEL 1     &bt BT_SEL 2     &mo 1            &kp LSHFT        &none            &none            &kp SPACE        &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT 
+                        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &mo 1            &kp LSHFT        &none            &none            &kp SPACE        &kp N0           &none            &kp LEFT         &kp RIGHT 
                         &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT       &kp PRINT        &kp PLUS         &kp RET          &kp BSPC         &mo  1           &kp RALT    >; };
         // numpad
         1 {bindings = < &none            &none            &none            &none            &none            &none            &kp CARET        &none            &kp FSLH         &kp STAR         &none            &none 
