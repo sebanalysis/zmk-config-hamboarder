@@ -23,7 +23,7 @@
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SQT
                         &mo 2            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
                         &none            &kp SPACE        &none            &mo 1            &kp LSHFT        &none            &none            &kp SPACE        &kp N0           &none            &kp LEFT         &kp RIGHT 
-                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT       &kp PRINT        &kp PLUS         &kp RET          &kp BSPC         &none            &kp RALT   >; };
+                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT       &kp PSCRN        &kp PLUS         &kp RET          &kp BSPC         &none            &kp RALT   >; };
         // numpad
         1 {bindings = < &none            &none            &none            &none            &none            &none            &kp CARET        &none            &kp FSLH         &kp STAR         &none            &none 
                         &none            &none            &kp BSLH         &kp HASH         &none            &kp LBRC         &kp RBRC         &kp N7           &kp N8           &kp N9           &kp MINUS        &none 
