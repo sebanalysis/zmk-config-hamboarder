@@ -28,7 +28,7 @@
     combos {
         compatible = "zmk,combos";
         // lock the keyboard for travel
-        // turning off causes it to unpair        
+        // using this instead of power because turning the board off causes it to unpair from pc        
         combo_lock {
             timeout-ms = <2000>;
             key-positions = <28 31 52 55>;  // home keys index and thumbs

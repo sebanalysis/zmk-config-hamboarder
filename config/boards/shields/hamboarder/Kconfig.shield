@@ -1,5 +1,4 @@
-# Copyright (c) 2021 The ZMK Contributors
-# SPDX-License-Identifier: MIT
+# registers hamboarder as a valid shield
 
 config SHIELD_HAMBOARDER
     def_bool $(shields_list_contains,hamboarder)
