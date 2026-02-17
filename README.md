@@ -34,7 +34,7 @@ topbar, tool -> polyline -> create polyline from existing segements
 ensure that there are no overlapping lines
 adjust the origin to the symetrical location here, before you import it to freecad!
 
-###freecad
+### freecad
 
 freecad is awful - accept it
 new freecad
@@ -81,7 +81,7 @@ in plot, checkSubtract soldermask from silkscreen
 
 ## todo
 
-12 3mmthick, 7mm diameter  washers needed.
+~~12 3mmthick, 7mm diameter  washers needed.~~
 ~~order sheet metal at midnight
 ~~upload the fixed plates and cover to jlcpcb
 ~~route all traces

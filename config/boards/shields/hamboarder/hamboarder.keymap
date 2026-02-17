@@ -25,15 +25,13 @@
     */ 
 / {
 
-    combos {
-        compatible = "zmk,combos";
-        // lock the keyboard for travel
-        // using this instead of power because turning the board off causes it to unpair from pc        
-        combo_lock {
-            timeout-ms = <2000>;
-            key-positions = <28 31 52 55>;  // home keys index and thumbs
-            bindings = <&tog 3>;
-            layers = <0 3>;  // works on base layer and lock layer
+    behaviors {
+        // tap RALT 3 times to toggle travel lock
+        td_lock: td_lock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RALT>, <&kp RALT>, <&tog 3>;
         };
     };
 
@@ -48,7 +46,7 @@
                         &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G                      &kp M            &kp N            &kp E            &kp I            &kp O            &kp SINGLE_QUOTE
                         &mo 2            &kp Z            &kp X            &kp C            &kp D            &kp V                      &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
                         &none            &kp SPACE        &none            &mo 1            &kp LSHFT        &none                      &none            &kp SPACE        &kp N0           &none            &kp LEFT         &kp RIGHT 
-                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT                 &kp PSCRN        &kp PLUS         &kp RET          &kp BSPC         &none            &kp RALT   >; };
+                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT                 &kp PSCRN        &kp PLUS         &kp RET          &kp BSPC         &none            &td_lock   >; };
         // numpad          
         1 {bindings = < &trans           &none            &none            &none            &none            &none                      &none            &none            &kp STAR         &none            &none            &trans
                         &trans           &none            &kp BSLH         &kp HASH         &kp PIPE         &kp LBRC                   &kp RBRC         &kp N7           &kp N8           &kp N9           &kp COLON        &kp UNDERSCORE 
@@ -65,12 +63,12 @@
                         &none            &out OUT_BLE     &none            &none            &none            &none                      &none            &kp SPACE        &none            &none            &none            &none 
                         &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0               &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
           
-        // locked layer. hold index and thumb homing keys for 2s to unlock          
+        // locked layer. tap RALT key 3 times to unlock          
         3 {bindings = < &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none >; };
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &td_lock >; };
     };
 };
