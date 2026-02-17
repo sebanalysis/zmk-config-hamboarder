@@ -13,7 +13,32 @@
 	time-to-max-speed-ms = <0>;
 	acceleration-exponent = <1>;
 };
+
+    /* 
+    KEY POSITIONS
+    Row 0:  0   1   2   3   4   5   6   7   8   9  10  11
+    Row 1: 12  13  14  15  16  17  18  19  20  21  22  23
+    Row 2: 24  25  26  27  28  29  30  31  32  33  34  35
+    Row 3: 36  37  38  39  40  41  42  43  44  45  46  47
+    Row 4: 48  49  50  51  52  53  54  55  56  57  58  59
+    Row 5: 60  61  62  63  64  65  66  67  68  69  70  71
+    */ 
 / {
+
+    combos {
+        compatible = "zmk,combos";
+        // lock the keyboard for travel
+        // turning off causes it to unpair        
+        combo_lock {
+            timeout-ms = <200>;
+            key-positions = <28 31 52 55>;  // home keys index and thumbs
+            bindings = <&tog 3>;
+            layers = <0 3>;  // works on base layer and lock layer
+        };
+    };
+
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -39,5 +64,13 @@
                         &none            &kp C_MUTE       &none            &none            &none            &none            &none            &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none 
                         &none            &out OUT_BLE     &none            &none            &none            &none            &none            &kp SPACE        &none            &none            &none            &none 
                         &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
+
+        // lock layer - all keys disabled, unlock with same four-corner combo
+        3 {bindings = < &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none >; };
     };
 };
