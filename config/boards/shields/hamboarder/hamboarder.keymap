@@ -30,7 +30,7 @@
         // lock the keyboard for travel
         // turning off causes it to unpair        
         combo_lock {
-            timeout-ms = <200>;
+            timeout-ms = <2000>;
             key-positions = <28 31 52 55>;  // home keys index and thumbs
             bindings = <&tog 3>;
             layers = <0 3>;  // works on base layer and lock layer
@@ -65,7 +65,7 @@
                         &none            &out OUT_BLE     &none            &none            &none            &none            &none            &kp SPACE        &none            &none            &none            &none 
                         &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
 
-        // lock layer - all keys disabled, unlock with same four-corner combo
+        // locked layer. hold index and thumb homing keys for 2s to unlock
         3 {bindings = < &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
                         &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
