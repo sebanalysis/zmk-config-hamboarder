@@ -4,14 +4,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // mouse 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20   // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 /* Mouse scroll: remove ramp-up delay (instant scroll) */
 &msc {
 	time-to-max-speed-ms = <0>;
-	acceleration-exponent = <1>;
+	acceleration-exponent = <2>;
 };
 
     /* 
@@ -42,35 +42,35 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // column       0                1                2                3                4                5                6                7                8                9                10               11          
-        0 {bindings = < &kp ESC          &kp N1           &kp N2           &kp N3           &kp N4           &kp N5           &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &kp DEL      
-                        &kp GRAVE        &kp Q            &kp W            &kp F            &kp P            &kp B            &kp J            &kp L            &kp U            &kp Y            &kp SEMI         &kp MINUS
-                        &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G            &kp M            &kp N            &kp E            &kp I            &kp O            &kp SINGLE_QUOTE
-                        &mo 2            &kp Z            &kp X            &kp C            &kp D            &kp V            &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
-                        &none            &kp SPACE        &none            &mo 1            &kp LSHFT        &none            &none            &kp SPACE        &kp N0           &none            &kp LEFT         &kp RIGHT 
-                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT       &kp PSCRN        &kp PLUS         &kp RET          &kp BSPC         &none            &kp RALT   >; };
-        // numpad
-        1 {bindings = < &trans           &none            &none            &none            &none            &none            &none            &none            &kp STAR         &none            &none            &trans
-                        &trans           &none            &kp BSLH         &kp HASH         &kp PIPE         &kp LBRC         &kp RBRC         &kp N7           &kp N8           &kp N9           &kp COLON        &kp UNDERSCORE 
-                        &trans           &kp AT           &kp PRCNT        &kp AMPS         &kp DLLR         &kp LPAR         &kp RPAR         &kp N4           &kp N5           &kp N6           &kp DOT         &kp DOUBLE_QUOTES
-                        &none            &trans           &kp CARET        &kp UNDERSCORE   &kp EXCL         &kp LBKT         &kp RBKT         &kp N1           &kp N2           &kp N3           &kp QUESTION     &kp PLUS
-                        &none            &kp LSHFT        &none            &none            &none            &none            &none            &trans           &kp N0           &trans           &trans           &trans  
-                        &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &trans           &kp BSPC         &trans           &trans >; };
-    
-        // arrowkeys
-        2 {bindings = < &kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6           &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
-                        &kp C_VOL_UP     &kp C_BRI_UP     &none            &none            &none            &none            &mkp LCLK        &mmv MOVE_LEFT   &mmv MOVE_UP     &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp RCLK
-                        &kp C_VOL_DN     &kp C_BRI_DN     &none            &mkp LCLK        &mkp RCLK        &none            &kp HOME         &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT        &kp END
-                        &none            &kp C_MUTE       &none            &none            &none            &none            &none            &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none 
-                        &none            &out OUT_BLE     &none            &none            &none            &none            &none            &kp SPACE        &none            &none            &none            &none 
-                        &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
-
-        // locked layer. hold index and thumb homing keys for 2s to unlock
-        3 {bindings = < &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none
-                        &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none >; };
+        // column       0                1                2                3                4                5                          6                7                8                9                10               11          
+        0 {bindings = < &kp ESC          &kp N1           &kp N2           &kp N3           &kp N4           &kp N5                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &kp DEL      
+                        &kp GRAVE        &kp Q            &kp W            &kp F            &kp P            &kp B                      &kp J            &kp L            &kp U            &kp Y            &kp SEMI         &kp MINUS
+                        &kp TAB          &kp A            &kp R            &kp S            &kp T            &kp G                      &kp M            &kp N            &kp E            &kp I            &kp O            &kp SINGLE_QUOTE
+                        &mo 2            &kp Z            &kp X            &kp C            &kp D            &kp V                      &kp K            &kp H            &kp COMMA        &kp DOT          &kp FSLH         &kp EQUAL
+                        &none            &kp SPACE        &none            &mo 1            &kp LSHFT        &none                      &none            &kp SPACE        &kp N0           &none            &kp LEFT         &kp RIGHT 
+                        &kp LALT         &kp LSHFT        &kp LCTRL        &kp LGUI         &kp BSLH         &kp INSERT                 &kp PSCRN        &kp PLUS         &kp RET          &kp BSPC         &none            &kp RALT   >; };
+        // numpad          
+        1 {bindings = < &trans           &none            &none            &none            &none            &none                      &none            &none            &kp STAR         &none            &none            &trans
+                        &trans           &none            &kp BSLH         &kp HASH         &kp PIPE         &kp LBRC                   &kp RBRC         &kp N7           &kp N8           &kp N9           &kp COLON        &kp UNDERSCORE 
+                        &trans           &kp AT           &kp PRCNT        &kp AMPS         &kp DLLR         &kp LPAR                   &kp RPAR         &kp N4           &kp N5           &kp N6           &kp DOT          &kp DOUBLE_QUOTES
+                        &none            &trans           &kp CARET        &kp UNDERSCORE   &kp EXCL         &kp LBKT                   &kp RBKT         &kp N1           &kp N2           &kp N3           &kp QUESTION     &kp PLUS
+                        &none            &kp LSHFT        &none            &none            &none            &none                      &none            &trans           &kp N0           &trans           &trans           &trans  
+                        &trans           &trans           &trans           &trans           &trans           &trans                     &trans           &trans           &trans           &kp BSPC         &trans           &trans >; };
+              
+        // arrowkeys          
+        2 {bindings = < &kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6                     &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
+                        &kp C_VOL_UP     &kp C_BRI_UP     &none            &none            &none            &none                      &mkp LCLK        &mmv MOVE_LEFT   &mmv MOVE_UP     &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp RCLK
+                        &kp C_VOL_DN     &kp C_BRI_DN     &none            &mkp LCLK        &mkp RCLK        &none                      &kp HOME         &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT        &kp END
+                        &none            &kp C_MUTE       &none            &none            &none            &none                      &none            &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none 
+                        &none            &out OUT_BLE     &none            &none            &none            &none                      &none            &kp SPACE        &none            &none            &none            &none 
+                        &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0               &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
+          
+        // locked layer. hold index and thumb homing keys for 2s to unlock          
+        3 {bindings = < &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none
+                        &none            &none            &none            &none            &none            &none                      &none            &none            &none            &none            &none            &none >; };
     };
 };
