@@ -12,7 +12,7 @@ download: https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/boards
 into ./boards/shields/hamboarder
 using https://download-directory.github.io/
 
-send to NICENANO with cp as the file manager doesn't work sometimes.
+send to NICENANO with cp as the file manager doesn't work sometimes. Maybe because in the media folder, it is renamed NICENANO1 or ...2 if you do it in fast sucession. But nautilus doesn't reenumerate it in the quick link.
 
 ```
 cp hamboarder-nice_nano@2.0.0-zmk.uf2 /run/media/$USER/NICENANO
