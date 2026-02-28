@@ -1,5 +1,8 @@
 ## zmk notes
 
+you can do &mo within &mo i fried &mo 1 -> 2 -> 3 -> 4 but it wouldn't go around the loop back into 0
+
+
 .keymap and .conf must match the shield name (i.e. kyria_rev2)
 Use the extension names  build.yaml, config/west.yml and .github/workflows/build.yml
 
