@@ -61,4 +61,5 @@
                         &trans           &trans           &trans           &trans           &none            &bt BT_SEL 0               &mo 3            &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
           
 
-};
+    };
+}; 
