@@ -27,6 +27,15 @@ remove paired bluetooth cache on pc
 ```
 sudo rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/C0:6F:8C:27:7D:4F; sudo bash -c 'rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/cache/*'; sudo systemctl restart bluetooth
 ```
+```
+sudo rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/C6:C4:9C:98:CB:6E; sudo bash -c 'rm -rf /var/lib/bluetooth/10:F6:0A:0B:EC:3E/cache/*'; sudo systemctl restart bluetooth
+```
+
+2026-03-05 not repair without pc restart
+
+use script in current dir zmk-bt-reset.sh
+
+
 
 ## ergogen notes
 ## dxf to step
