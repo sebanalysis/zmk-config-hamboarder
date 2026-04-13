@@ -57,7 +57,7 @@
                         &kp C_VOL_DN     &kp C_BRI_DN     &mkp LCLK        &mkp MCLK        &mkp RCLK        &none                      &kp HOME         &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT        &kp END
                         &none            &kp C_MUTE       &none            &none            &none            &none                      &none            &msc SCRL_LEFT   &msc SCRL_UP     &msc SCRL_DOWN   &msc SCRL_RIGHT  &none 
                         &none            &out OUT_BLE     &none            &none            &kp LSHFT        &none                      &none            &kp SPACE        &none            &none            &none            &none 
-                        &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0               &mo BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
+                        &trans           &trans           &trans           &trans           &bt BT_SEL 3     &bt BT_SEL 0               &bt BT_SEL 1     &bt BT_CLR       &kp RET          &kp BSPC         &trans           &trans >; };
           
 
     };
